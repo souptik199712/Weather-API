@@ -29,19 +29,21 @@ public class WeatherAPI {
 		System.out.println("Welecome to weather finder");
 		String API_KEY = "ccb1ca0fcfe40eb661bfe21e7282ab2d14"; // declaration of Weather API key
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("Enter the latitude and longitude of location");
-		// taking latitute and longitude as input
-		String latitude = br.readLine();
-		String longitude = br.readLine();
-		// Showcasing the menu option for input from user
-		System.out.println("Please provide an input based on the following options");
-		System.out.println("1.Weather Information for current time");
-		System.out.println("2. Weather Information for 5 days");
-		System.out.println("3. Air Pollution Data");
-		System.out.println("4. Exit");
-		int choice = (Integer.parseInt(br.readLine()));
+		int choice;
+
 		// Loop for accepting and processing inputs from the user
 		do {
+			System.out.println("Enter the latitude and longitude of location");
+			// taking latitute and longitude as input
+			String latitude = br.readLine();
+			String longitude = br.readLine();
+			// Showcasing the menu option for input from user
+			System.out.println("Please provide an input based on the following options");
+			System.out.println("1.Weather Information for current time");
+			System.out.println("2. Weather Information for 5 days");
+			System.out.println("3. Air Pollution Data");
+			System.out.println("4. Exit");
+			choice = (Integer.parseInt(br.readLine()));
 			switch (choice) {
 				case 1: {
 					StringBuilder Current_Weather_data = new StringBuilder();
