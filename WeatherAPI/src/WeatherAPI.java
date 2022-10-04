@@ -159,6 +159,9 @@ public class WeatherAPI {
 					}
 					break;
 				}
+				case 4:
+					System.out.println("Thanks for using Weather API");
+					return;
 				default: {
 					System.out.print("Invalid Choice! Please try again.");
 					break;
