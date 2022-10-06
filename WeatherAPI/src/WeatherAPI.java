@@ -27,7 +27,7 @@ public class WeatherAPI {
 	// Main funtion starts here
 	public static void main(String[] args) throws IOException {
 		System.out.println("Welecome to weather finder");
-		String API_KEY = "ccb1ca0fcfe40eb661bfe21e7282ab2d14"; // declaration of Weather API key
+		String API_KEY = "ccb1ca0fcfe40eb661bfe21e7282ab2d"; // declaration of Weather API key
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int choice;
 
@@ -48,8 +48,8 @@ public class WeatherAPI {
 				case 1: {
 					StringBuilder Current_Weather_data = new StringBuilder();
 					try { // communicating with current weather API
-						URL Weather_URL = new URL("https://api.openweathermap.org/data/2.5/weather?latitude=" + latitude
-								+ "&longitude=" + longitude + "&units=metric" + "&appid=" + API_KEY);
+						URL Weather_URL = new URL("https://api.openweathermap.org/data/2.5/weather?lat=" + latitude
+								+ "&lon=" + longitude + "&units=metric" + "&appid=" + API_KEY);
 						HttpsURLConnection connection = (HttpsURLConnection) Weather_URL.openConnection();
 						connection.setRequestMethod("GET");
 						BufferedReader rd = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -85,8 +85,8 @@ public class WeatherAPI {
 				case 2: {
 					StringBuilder result = new StringBuilder();
 					try {
-						URL url = new URL("https://api.openweathermap.org/data/2.5/forecast?latitude=" + latitude
-								+ "&longitude=" + longitude + "&cnt=5" + "&units=metric" + "&appid=" + API_KEY);
+						URL url = new URL("https://api.openweathermap.org/data/2.5/forecast?lat=" + latitude
+								+ "&lon=" + longitude + "&cnt=5" + "&units=metric" + "&appid=" + API_KEY);
 						HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
 						connection.setRequestMethod("GET");
 						// URLConnection connection=url.openConnection();
@@ -133,8 +133,8 @@ public class WeatherAPI {
 					StringBuilder result_Current_Pollution = new StringBuilder();
 					try {
 						URL Current_Pollution_Url = new URL(
-								"http://api.openweathermap.org/data/2.5/air_pollution?latitude="
-										+ latitude + "&longitude="
+								"http://api.openweathermap.org/data/2.5/air_pollution?lat="
+										+ latitude + "&lon="
 										+ longitude + "&appid=" + API_KEY);
 						HttpURLConnection connection = (HttpURLConnection) Current_Pollution_Url.openConnection();
 						connection.setRequestMethod("GET");
